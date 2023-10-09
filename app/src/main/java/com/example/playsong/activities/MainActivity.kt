@@ -1,4 +1,4 @@
-package com.example.playsong
+package com.example.playsong.activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -19,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.playsong.*
+import com.example.playsong.adapters.MusicAdapter
 import com.example.playsong.databinding.ActivityMainBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.gson.GsonBuilder
@@ -35,11 +37,24 @@ class MainActivity : AppCompatActivity() {
         lateinit var musicListSearch : ArrayList<Music>
         var search: Boolean = false
         var themeIndex: Int = 0
-        val currentTheme = arrayOf(R.style.coolPink, R.style.coolBlue, R.style.coolPurple, R.style.coolGreen, R.style.coolBlack)
-        val currentThemeNav = arrayOf(R.style.coolPinkNav, R.style.coolBlueNav, R.style.coolPurpleNav, R.style.coolGreenNav,
-            R.style.coolBlackNav)
-        val currentGradient = arrayOf(R.drawable.gradient_pink, R.drawable.gradient_blue, R.drawable.gradient_purple, R.drawable.gradient_green,
-        R.drawable.gradient_black)
+        val currentTheme = arrayOf(
+            R.style.coolPink,
+            R.style.coolBlue,
+            R.style.coolPurple,
+            R.style.coolGreen,
+            R.style.coolBlack
+        )
+        val currentThemeNav = arrayOf(
+            R.style.coolPinkNav, R.style.coolBlueNav, R.style.coolPurpleNav, R.style.coolGreenNav,
+            R.style.coolBlackNav
+        )
+        val currentGradient = arrayOf(
+            R.drawable.gradient_pink,
+            R.drawable.gradient_blue,
+            R.drawable.gradient_purple,
+            R.drawable.gradient_green,
+            R.drawable.gradient_black
+        )
         var sortOrder: Int = 0
         val sortingList = arrayOf(MediaStore.Audio.Media.DATE_ADDED + " DESC", MediaStore.Audio.Media.TITLE,
         MediaStore.Audio.Media.SIZE + " DESC")
@@ -54,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //for nav drawer
-        toggle = ActionBarDrawerToggle(this, binding.root,R.string.open, R.string.close)
+        toggle = ActionBarDrawerToggle(this, binding.root, R.string.open, R.string.close)
         binding.root.addDrawerListener(toggle)
         toggle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

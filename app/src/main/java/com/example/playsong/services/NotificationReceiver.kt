@@ -1,10 +1,13 @@
-package com.example.playsong
+package com.example.playsong.services
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.playsong.*
+import com.example.playsong.fragments.NowPlaying
+import com.example.playsong.activities.PlayerActivity
 
 class NotificationReceiver:BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {

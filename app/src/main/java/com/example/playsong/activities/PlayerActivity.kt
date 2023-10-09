@@ -1,4 +1,4 @@
-package com.example.playsong
+package com.example.playsong.activities
 
 import android.annotation.SuppressLint
 import android.content.ComponentName
@@ -26,8 +26,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.playsong.*
 import com.example.playsong.databinding.ActivityPlayerBinding
 import com.example.playsong.databinding.AudioBoosterBinding
+import com.example.playsong.fragments.NowPlaying
+import com.example.playsong.services.MusicService
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -141,7 +144,9 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
                         min15 = false
                         min30 = false
                         min60 = false
-                        binding.timerBtnPA.setColorFilter(ContextCompat.getColor(this, R.color.cool_pink))
+                        binding.timerBtnPA.setColorFilter(ContextCompat.getColor(this,
+                            R.color.cool_pink
+                        ))
                     }
                     .setNegativeButton("No"){dialog, _ ->
                         dialog.dismiss()
@@ -197,7 +202,7 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
                 initServiceAndPlaylist(PlaylistActivity.musicPlaylist.ref[PlaylistDetails.currentPlaylistPos].playlist, shuffle = true)
             "PlayNext"->initServiceAndPlaylist(PlayNext.playNextList, shuffle = false, playNext = true)
         }
-    if (musicService!= null && !isPlaying) playMusic()
+    if (musicService != null && !isPlaying) playMusic()
     }
 
     private fun setLayout(){
@@ -207,8 +212,12 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
             .apply(RequestOptions().placeholder(R.drawable.music_player_icon_slash_screen).centerCrop())
             .into(binding.songImgPA)
         binding.songNamePA.text = musicListPA[songPosition].title
-        if(repeat) binding.repeatBtnPA.setColorFilter(ContextCompat.getColor(applicationContext, R.color.purple_500))
-        if(min15 || min30 || min60) binding.timerBtnPA.setColorFilter(ContextCompat.getColor(applicationContext, R.color.purple_500))
+        if(repeat) binding.repeatBtnPA.setColorFilter(ContextCompat.getColor(applicationContext,
+            R.color.purple_500
+        ))
+        if(min15 || min30 || min60) binding.timerBtnPA.setColorFilter(ContextCompat.getColor(applicationContext,
+            R.color.purple_500
+        ))
         if(isFavourite) binding.favouriteBtnPA.setImageResource(R.drawable.favourite_icon)
         else binding.favouriteBtnPA.setImageResource(R.drawable.favourite_empty_icon)
 
@@ -323,7 +332,8 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
             binding.timerBtnPA.setColorFilter(ContextCompat.getColor(this, R.color.purple_500))
             min15 = true
             Thread{Thread.sleep((15 * 60000).toLong())
-            if(min15) exitApplication()}.start()
+            if(min15) exitApplication()
+            }.start()
             dialog.dismiss()
         }
         dialog.findViewById<LinearLayout>(R.id.min_30)?.setOnClickListener {
@@ -331,7 +341,8 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
             binding.timerBtnPA.setColorFilter(ContextCompat.getColor(this, R.color.purple_500))
             min30 = true
             Thread{Thread.sleep((30 * 60000).toLong())
-                if(min30) exitApplication()}.start()
+                if(min30) exitApplication()
+            }.start()
             dialog.dismiss()
         }
         dialog.findViewById<LinearLayout>(R.id.min_60)?.setOnClickListener {
@@ -339,12 +350,13 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
             binding.timerBtnPA.setColorFilter(ContextCompat.getColor(this, R.color.purple_500))
             min60 = true
             Thread{Thread.sleep((60 * 60000).toLong())
-                if(min60) exitApplication()}.start()
+                if(min60) exitApplication()
+            }.start()
             dialog.dismiss()
         }
     }
     @RequiresApi(Build.VERSION_CODES.Q)
-    private fun getMusicDetails(contentUri: Uri): Music{
+    private fun getMusicDetails(contentUri: Uri): Music {
         var cursor: Cursor? = null
         try {
             val projection = arrayOf(MediaStore.Audio.Media.DATA, MediaStore.Audio.Media.DURATION)

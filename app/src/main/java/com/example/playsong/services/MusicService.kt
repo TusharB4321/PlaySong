@@ -1,4 +1,4 @@
-package com.example.playsong
+package com.example.playsong.services
 
 import android.annotation.SuppressLint
 import android.app.PendingIntent
@@ -12,6 +12,13 @@ import android.os.*
 import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
+import com.example.playsong.ApplicationClass
+import com.example.playsong.R
+import com.example.playsong.activities.MainActivity
+import com.example.playsong.fragments.NowPlaying
+import com.example.playsong.activities.PlayerActivity
+import com.example.playsong.formatDuration
+import com.example.playsong.getImgArt
 
 class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
     private var myBinder = MyBinder()
@@ -42,16 +49,24 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
 
         val contentIntent = PendingIntent.getActivity(this, 0, intent, flag)
 
-        val prevIntent = Intent(baseContext, NotificationReceiver::class.java).setAction(ApplicationClass.PREVIOUS)
+        val prevIntent = Intent(baseContext, NotificationReceiver::class.java).setAction(
+            ApplicationClass.PREVIOUS
+        )
         val prevPendingIntent = PendingIntent.getBroadcast(baseContext, 0, prevIntent, flag)
 
-        val playIntent = Intent(baseContext, NotificationReceiver::class.java).setAction(ApplicationClass.PLAY)
+        val playIntent = Intent(baseContext, NotificationReceiver::class.java).setAction(
+            ApplicationClass.PLAY
+        )
         val playPendingIntent = PendingIntent.getBroadcast(baseContext, 0, playIntent, flag)
 
-        val nextIntent = Intent(baseContext, NotificationReceiver::class.java).setAction(ApplicationClass.NEXT)
+        val nextIntent = Intent(baseContext, NotificationReceiver::class.java).setAction(
+            ApplicationClass.NEXT
+        )
         val nextPendingIntent = PendingIntent.getBroadcast(baseContext, 0, nextIntent, flag)
 
-        val exitIntent = Intent(baseContext, NotificationReceiver::class.java).setAction(ApplicationClass.EXIT)
+        val exitIntent = Intent(baseContext, NotificationReceiver::class.java).setAction(
+            ApplicationClass.EXIT
+        )
         val exitPendingIntent = PendingIntent.getBroadcast(baseContext, 0, exitIntent, flag)
 
         val imgArt = getImgArt(PlayerActivity.musicListPA[PlayerActivity.songPosition].path)
@@ -61,7 +76,9 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
             BitmapFactory.decodeResource(resources, R.drawable.music_player_icon_slash_screen)
         }
 
-        val notification = androidx.core.app.NotificationCompat.Builder(baseContext, ApplicationClass.CHANNEL_ID)
+        val notification = androidx.core.app.NotificationCompat.Builder(baseContext,
+            ApplicationClass.CHANNEL_ID
+        )
             .setContentIntent(contentIntent)
             .setContentTitle(PlayerActivity.musicListPA[PlayerActivity.songPosition].title)
             .setContentText(PlayerActivity.musicListPA[PlayerActivity.songPosition].artist)

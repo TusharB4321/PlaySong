@@ -1,4 +1,4 @@
-package com.example.playsong
+package com.example.playsong.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -14,6 +14,8 @@ import androidx.core.text.bold
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.playsong.*
+import com.example.playsong.activities.*
 import com.example.playsong.databinding.DetailsViewBinding
 import com.example.playsong.databinding.MoreFeaturesBinding
 import com.example.playsong.databinding.MusicViewBinding
@@ -21,7 +23,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
 class MusicAdapter(private val context: Context, private var musicList: ArrayList<Music>, private val playlistDetails: Boolean = false,
-private val selectionActivity: Boolean = false)
+                   private val selectionActivity: Boolean = false)
     : RecyclerView.Adapter<MusicAdapter.MyHolder>() {
 
     class MyHolder(binding: MusicViewBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -106,9 +108,13 @@ private val selectionActivity: Boolean = false)
             selectionActivity ->{
                 holder.root.setOnClickListener {
                     if(addSong(musicList[position]))
-                        holder.root.setBackgroundColor(ContextCompat.getColor(context, R.color.cool_pink))
+                        holder.root.setBackgroundColor(ContextCompat.getColor(context,
+                            R.color.cool_pink
+                        ))
                     else
-                        holder.root.setBackgroundColor(ContextCompat.getColor(context, R.color.white))
+                        holder.root.setBackgroundColor(ContextCompat.getColor(context,
+                            R.color.white
+                        ))
 
                 }
             }

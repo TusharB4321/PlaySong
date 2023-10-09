@@ -1,10 +1,12 @@
-package com.example.playsong
+package com.example.playsong.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.playsong.adapters.MusicAdapter
+import com.example.playsong.R
 import com.example.playsong.databinding.ActivitySelectionBinding
 
 class SelectionActivity : AppCompatActivity() {
@@ -46,7 +48,9 @@ class SelectionActivity : AppCompatActivity() {
         //for black theme checking
         if(MainActivity.themeIndex == 4)
         {
-            binding.searchViewSA.backgroundTintList = ContextCompat.getColorStateList(this, R.color.white)
+            binding.searchViewSA.backgroundTintList = ContextCompat.getColorStateList(this,
+                R.color.white
+            )
         }
     }
 }

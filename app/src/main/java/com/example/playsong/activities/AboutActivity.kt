@@ -1,4 +1,4 @@
-package com.example.playsong
+package com.example.playsong.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

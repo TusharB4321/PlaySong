@@ -1,4 +1,4 @@
-package com.example.playsong
+package com.example.playsong.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -8,7 +8,13 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.playsong.Playlist
+import com.example.playsong.R
+import com.example.playsong.activities.MainActivity
+import com.example.playsong.activities.PlaylistActivity
+import com.example.playsong.activities.PlaylistDetails
 import com.example.playsong.databinding.PlaylistViewBinding
+import com.example.playsong.setDialogBtnBackground
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class PlaylistViewAdapter(private val context: Context, private var playlistList: ArrayList<Playlist>) : RecyclerView.Adapter<PlaylistViewAdapter.MyHolder>() {

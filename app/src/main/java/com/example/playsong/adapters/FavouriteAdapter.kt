@@ -1,4 +1,4 @@
-package com.example.playsong
+package com.example.playsong.adapters
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -11,6 +11,10 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.playsong.Music
+import com.example.playsong.activities.PlayNext
+import com.example.playsong.R
+import com.example.playsong.activities.PlayerActivity
 import com.example.playsong.databinding.FavouriteViewBinding
 import com.example.playsong.databinding.MoreFeaturesBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder

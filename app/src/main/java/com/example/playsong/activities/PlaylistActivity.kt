@@ -1,4 +1,4 @@
-package com.example.playsong
+package com.example.playsong.activities
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.playsong.*
+import com.example.playsong.adapters.PlaylistViewAdapter
 import com.example.playsong.databinding.ActivityPlaylistBinding
 import com.example.playsong.databinding.AddPlaylistDialogBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder

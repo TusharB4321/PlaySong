@@ -1,9 +1,11 @@
-package com.example.playsong
+package com.example.playsong.activities
 
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.playsong.databinding.ActivitySettingsBinding
+import com.example.playsong.exitApplication
+import com.example.playsong.setDialogBtnBackground
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class SettingsActivity : AppCompatActivity() {

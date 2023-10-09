@@ -1,4 +1,4 @@
-package com.example.playsong
+package com.example.playsong.activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.playsong.adapters.FavouriteAdapter
+import com.example.playsong.Music
+import com.example.playsong.checkPlaylist
 import com.example.playsong.databinding.ActivityFavouriteBinding
 
 

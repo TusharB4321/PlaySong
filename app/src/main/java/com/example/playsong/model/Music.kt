@@ -5,6 +5,8 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.media.MediaMetadataRetriever
 import androidx.appcompat.app.AlertDialog
+import com.example.playsong.activities.FavouriteActivity
+import com.example.playsong.activities.PlayerActivity
 import com.google.android.material.color.MaterialColors
 import java.io.File
 import java.util.concurrent.TimeUnit

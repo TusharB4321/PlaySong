@@ -1,9 +1,11 @@
-package com.example.playsong
+package com.example.playsong.activities
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.playsong.Music
+import com.example.playsong.adapters.FavouriteAdapter
 import com.example.playsong.databinding.ActivityPlayNextBinding
 
 class PlayNext : AppCompatActivity() {
