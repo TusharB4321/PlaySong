@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.AboutActivity">
+    tools:context=".activities.AboutActivity"
+    android:background="@color/black">
 
     <TextView
         android:id="@+id/aboutText"
@@ -11,6 +12,7 @@
         android:layout_height="match_parent"
         android:text="@string/about"
         android:textSize="18sp"
+        android:textColor="@color/white"
         android:layout_margin="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

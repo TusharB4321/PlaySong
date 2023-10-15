@@ -17,7 +17,6 @@
 
     <style name="splash_screen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
-        <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
 
 
@@ -164,6 +163,8 @@
         <item name="dialogTextColor">@color/white</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
-
+    <style name="MyCustomTextInputLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/purple_700</item>
+    </style>
 
 </resources>

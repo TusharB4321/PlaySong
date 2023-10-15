@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.NowPlaying"
-    android:background="?attr/themeColor">
+    android:background="@color/black">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/songImgNP"
@@ -22,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         app:icon="@drawable/next_icon"
-        app:iconTint="@color/white"
-        android:backgroundTint="?attr/themeColor"
+        app:iconTint="@color/black"
+        android:backgroundTint="@color/white"
         android:layout_centerVertical="true"
         app:iconSize="40dp"
         android:layout_marginEnd="10dp"/>
@@ -33,8 +33,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:icon="@drawable/play_icon"
-        app:iconTint="@color/white"
-        android:backgroundTint="?attr/themeColor"
+        app:iconTint="@color/black"
+        android:backgroundTint="@color/white"
         android:layout_centerVertical="true"
         app:iconSize="40dp"
         android:layout_toStartOf="@id/nextBtnNP"

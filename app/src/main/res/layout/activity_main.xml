@@ -6,7 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.MainActivity"
+    android:background="@color/black">
 
 
 <!--    for refreshing layout on swipe from top-->
@@ -40,8 +41,9 @@
                         android:contentDescription="@string/shuffle_btn"
                         android:drawableTop="@drawable/shuffle_icon"
                         android:text="@string/shuffle_btn"
+                        android:drawableTint="@color/white"
                         android:textAllCaps="false"
-                        android:textColor="?colorOnPrimary" />
+                        android:textColor="@color/white" />
                     <!--Favourites Button-->
                     <Button
                         android:id="@+id/favouriteBtn"
@@ -53,7 +55,8 @@
                         android:drawableTop="@drawable/favourite_icon"
                         android:text="@string/favourites_btn"
                         android:textAllCaps="false"
-                        android:textColor="?colorOnPrimary" />
+                        android:drawableTint="@color/white"
+                        android:textColor="@color/white" />
                     <!--Playlists Button-->
                     <Button
                         android:id="@+id/playlistBtn"
@@ -64,8 +67,9 @@
                         android:contentDescription="@string/playlist_btn"
                         android:drawableTop="@drawable/playlist_icon"
                         android:text="@string/playlist_btn"
+                        android:drawableTint="@color/white"
                         android:textAllCaps="false"
-                        android:textColor="?colorOnPrimary" />
+                        android:textColor="@color/white" />
 
                     <!--Play Next Button-->
                     <Button
@@ -77,8 +81,9 @@
                         android:contentDescription="@string/playlist_btn"
                         android:drawableTop="@drawable/play_next_icon"
                         android:text="@string/play_next"
+                        android:drawableTint="@color/white"
                         android:textAllCaps="false"
-                        android:textColor="?colorOnPrimary" />
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
 
@@ -89,14 +94,15 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:text="@string/total_songs"
-                    android:textColor="?colorOnPrimary" />
+                    android:textColor="@color/white" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/musicRV"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scrollbarThumbVertical="@drawable/scroll_bar_icon"
-                    android:scrollbars="vertical" />
+                    android:scrollbars="vertical"
+                    />
 
             </LinearLayout>
             <androidx.fragment.app.FragmentContainerView
@@ -118,6 +124,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        android:background="@color/black"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu"/>
 
