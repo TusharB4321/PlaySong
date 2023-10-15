@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.PlaylistDetails">
+    tools:context=".activities.PlaylistDetails"
+    android:background="@color/black">
 
 
     <LinearLayout
@@ -15,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="?attr/themeColor"
+        android:background="@color/black"
         android:layout_marginTop="2dp">
 
         <ImageButton
@@ -49,12 +50,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linearLayout"
-        android:background="?attr/themeColor"
+        android:background="@color/black"
         android:layout_marginTop="10dp">
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/playlistImgPD"
-            android:layout_width="250dp"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
+            android:padding="10dp"
             android:src="@drawable/music_player_icon_slash_screen"/>
         <TextView
             android:id="@+id/moreInfoPD"
@@ -86,7 +88,7 @@
         android:backgroundTint="@color/white"
         app:icon="@drawable/shuffle_icon"
         app:iconSize="35dp"
-        app:iconTint="?attr/themeColor"
+        app:iconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
@@ -94,7 +96,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.9"
         app:strokeWidth="2dp"
-        app:strokeColor="?attr/themeColor"
+        app:strokeColor="@color/cool_green"
         android:visibility="invisible"/>
 
 
@@ -117,7 +119,7 @@
             android:drawableLeft="@drawable/add_icon"
             android:text="@string/add_song"
             android:textAllCaps="false"
-            android:textColor="?colorOnPrimary"
+            android:textColor="@color/white"
             tools:ignore="RtlHardcoded" />
 
         <!--Remove Button-->
@@ -131,7 +133,7 @@
             android:drawableLeft="@drawable/remove_icon"
             android:text="@string/remove_all"
             android:textAllCaps="false"
-            android:textColor="?colorOnPrimary"
+            android:textColor="@color/white"
             tools:ignore="RtlHardcoded" />
 
     </LinearLayout>

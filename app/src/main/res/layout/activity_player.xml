@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activities.PlayerActivity"
     android:orientation="vertical"
+    android:background="@drawable/gradient_back_black"
     android:gravity="center">
 
 <!--    First Row-->
@@ -91,7 +92,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:icon="@drawable/previous_icon"
-            app:iconSize="40dp"/>
+            android:backgroundTint="@color/black"
+            app:iconSize="40dp"
+            app:iconTint="@color/white"/>
 
 <!--        Play & Pause Button-->
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -111,7 +114,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:icon="@drawable/next_icon"
-            app:iconSize="40dp"/>
+            android:backgroundTint="@color/black"
+            app:iconSize="40dp"
+            app:iconTint="@color/white"/>
 
     </LinearLayout>
 
@@ -166,7 +171,7 @@
             android:contentDescription="@string/repeat_btn"
             android:layout_weight="1"
             tools:ignore="NestedWeights"
-            app:tint="@color/cool_pink" />
+            app:tint="@color/white" />
 
 <!--        Equalizer Button-->
         <ImageButton
@@ -177,7 +182,7 @@
             android:background="?attr/selectableItemBackground"
             android:contentDescription="@string/equalizer_btn"
             android:layout_weight="1"
-            app:tint="@color/cool_pink" />
+            app:tint="@color/white" />
 
 <!--        Timer Button-->
         <ImageButton
@@ -188,7 +193,7 @@
             android:background="?attr/selectableItemBackground"
             android:contentDescription="@string/timer_btn"
             android:layout_weight="1"
-            app:tint="@color/cool_pink" />
+            app:tint="@color/white" />
 
 <!--        Share Button-->
         <ImageButton
@@ -199,7 +204,7 @@
             android:background="?attr/selectableItemBackground"
             android:contentDescription="@string/share_btn"
             android:layout_weight="1"
-            app:tint="@color/cool_pink" />
+            app:tint="@color/white" />
 
 
         <!--       Volume Button-->
@@ -211,7 +216,7 @@
             android:background="?attr/selectableItemBackground"
             android:contentDescription="@string/share_btn"
             android:layout_weight="1"
-            app:tint="@color/cool_pink" />
+            app:tint="@color/white" />
 
     </LinearLayout>
 
